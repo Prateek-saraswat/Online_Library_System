@@ -19,7 +19,7 @@ export default function BookDetails() {
   if (!book) {
     return (
       <div className="min-h-screen bg-amber-950 flex flex-col items-center justify-center text-center px-6">
-        <span className="text-6xl mb-4">📕</span>
+        <span className="text-6xl mb-4"></span>
         <h2 className="text-2xl font-serif font-bold text-amber-200 mb-2">
           Book Not Found
         </h2>
@@ -95,7 +95,7 @@ export default function BookDetails() {
                 <div className="border-t border-amber-800 mb-6" />
 
                 <h3 className="text-amber-400 text-xs uppercase tracking-widest font-semibold mb-2">
-                  About this Book
+                  About this Book (description)
                 </h3>
                 <p className="text-amber-200/80 text-sm leading-relaxed">
                   {book.description}

@@ -17,7 +17,7 @@ export default function Home() {
       </div>
 
     
-        {/* {book list componsnt for rendering book card} */}
+        {/* {book list component for rendering book card} */}
       <BookList />
 
     </div>
