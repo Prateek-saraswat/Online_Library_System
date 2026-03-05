@@ -1,6 +1,7 @@
 import BookList from "../components/BookList";
 
 export default function Home() {
+
   return (
 
     //this is div for Welcome messages
@@ -14,7 +15,12 @@ export default function Home() {
           Welcome to your digital Library. Browse books by category, explore
           details, and manage your collection with ease.
         </p>
+
+<p className="text-amber-400/60 text-xs mt-2">
+  Browse books by category on the Browse Books page.
+</p>
       </div>
+      
 
     
         {/* {book list component for rendering book card} */}

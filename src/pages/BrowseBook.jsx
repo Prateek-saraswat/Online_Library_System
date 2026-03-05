@@ -116,7 +116,7 @@ function capitalize(str) {
 
                 <div className="mb-6">
                   <div className="flex items-center gap-2">
-                    <span className="text-2xl">🆕</span>
+                    <span className="text-2xl"></span>
                     <h2 className="text-2xl font-serif font-bold text-amber-200">
                       Recently Added
                     </h2>
@@ -126,12 +126,11 @@ function capitalize(str) {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {filteredAddedBooks.map((book) => (
-                    <Link
+                    <div
                       key={book.id}
-                      to={`/books/${book.category.toLowerCase()}/${book.id}`}
                     >
                       <BookCard book={book} isNew={true} />
-                    </Link>
+                    </div>
                   ))}
                 </div>
 
@@ -146,7 +145,7 @@ function capitalize(str) {
                 {filteredAddedBooks.length > 0 && (
                   <div className="mb-6">
                     <h2 className="text-2xl font-serif font-bold text-amber-200">
-                      📚 All Books
+                       All Books
                     </h2>
                     <div className="mt-2 w-12 h-1 bg-amber-500 rounded-full" />
                   </div>
@@ -154,12 +153,11 @@ function capitalize(str) {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {filteredStaticBooks.map((book) => (
-                    <Link
+                    <div
                       key={book.id}
-                      to={`/books/${book.category.toLowerCase()}/${book.id}`}
                     >
                       <BookCard book={book} />
-                    </Link>
+                    </div>
                   ))}
                 </div>
               </div>

@@ -14,13 +14,15 @@ const Navbar = () => {
     <nav className="bg-amber-950 shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-
+        
           <div className="flex items-center gap-2">
-           
+           <Link to={'/'}>
             <span className="text-amber-400 font-serif text-2xl font-bold tracking-wide">
               My<span className="text-amber-200">Library</span>
             </span>
+             </Link>
           </div>
+         
 
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
