@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import SearchBar from "../components/SearchBar";
 import BookCard from "../components/BookCard";
 import books from "../data/BooksData.js";
-import CategoryFilter from "../components/Categoryfilter.jsx";
+import CategoryFilter from "../components/CategoryFilter.jsx";
 
 //Browse books section 
 export default function BrowseBooks() {
