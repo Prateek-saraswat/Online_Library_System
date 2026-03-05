@@ -1,12 +1,11 @@
 import { useState } from "react";
-import {Link} from "react-router-dom"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "Browse Books", href: "/books" },
+    { label: "Browse Books", href: "/browse-books" },
     { label: "Add Book", href: "/add-book" },
   ];
 
