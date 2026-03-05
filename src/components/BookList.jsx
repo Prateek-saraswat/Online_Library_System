@@ -5,6 +5,8 @@ import BookCard from "./BookCard";
 
 const BookList = () => {
   return (
+
+    //Book List component  which renders all books inside it ans shows all book cards
     <section className="py-10 px-6 max-w-7xl mx-auto">
 
       <div className="mb-8">
@@ -18,6 +20,8 @@ const BookList = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+        {/* Book card component to render for each book  */}
         {books.map((book) => (
           <BookCard key={book.id} book={book} />
         ))}

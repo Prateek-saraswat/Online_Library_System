@@ -2,6 +2,8 @@ import BookList from "../components/BookList";
 
 export default function Home() {
   return (
+
+    //this is div for Welcome messages
     <div className="min-h-screen bg-amber-950">
 
       <div className="px-6 pt-10 pb-4 max-w-7xl mx-auto">
@@ -14,6 +16,8 @@ export default function Home() {
         </p>
       </div>
 
+    
+        {/* {book list componsnt for rendering book card} */}
       <BookList />
 
     </div>

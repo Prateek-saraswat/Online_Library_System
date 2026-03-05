@@ -1,6 +1,8 @@
 import {Link} from "react-router-dom"
 
 const BookCard = ({book}) => {
+
+        //book card component to show book details in a card form 
     console.log(book)
   return (
     <div className="bg-amber-900 rounded-2xl overflow-hidden shadow-2xl w-64 group hover:scale-105 transition-transform duration-300 cursor-pointer border border-amber-800">
