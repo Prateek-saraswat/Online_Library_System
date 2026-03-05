@@ -6,17 +6,28 @@ import BookCard from "../components/BookCard";
 import books from "../data/BooksData.js";
 import CategoryFilter from "../components/Categoryfilter.jsx";
 
+//Browse books section 
 export default function BrowseBooks() {
-  const { category } = useParams();
+
+    //taking cataegory from useParam is category=="" then showing all books
+    const { category } = useParams();
   const navigate = useNavigate();
 
+  // capitalizing the first letter of category for matching category written in category component
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+  //fetching newly added books from rudux store
   const addedBooks = useSelector((state) => state.books.addedBooks);
 
+  //states for seachQuery string and category
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(
     category ? capitalize(category) : "All"
   );
 
+  //navigation logic for showing category based books
   useEffect(() => {
     if (selectedCategory === "All") {
       navigate("/browse-books");
@@ -80,6 +91,8 @@ export default function BrowseBooks() {
 
         <div className="border-t border-amber-800/50 mb-8" />
 
+
+            {/* if no books are found showing this block other wise showing the founded books with conditional rendering */}
         {totalFound === 0 ? (
           <div className="flex flex-col items-center justify-center py-24 text-center">
             <span className="text-6xl mb-4">📭</span>
@@ -159,7 +172,3 @@ export default function BrowseBooks() {
   );
 }
 
-// Helper to capitalize first letter of category from URL param
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}

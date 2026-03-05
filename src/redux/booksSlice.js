@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// booksSlice — manages ONLY newly added books state
+// booksSlice
 const booksSlice = createSlice({
   name: "books",
   initialState: {
-    addedBooks: [], // only stores user-added books
+    addedBooks: [], 
   },
   reducers: {
-    // addBook — adds new book at the beginning of addedBooks
+    //action for adding new book 
     addBook: (state, action) => {
       state.addedBooks.unshift(action.payload);
     },

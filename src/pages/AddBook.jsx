@@ -5,6 +5,7 @@ import { addBook } from "../redux/booksSlice";
 
 const categories = ["Philosophical", "Fantasy", "Sci-Fi", "History", "Poetry"];
 
+
 const initialForm = {
   title: "",
   author: "",
@@ -20,6 +21,7 @@ export default function AddBook() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // state for form data user for adding new book
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
 
@@ -29,6 +31,8 @@ export default function AddBook() {
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
+
+  //validation for form 
   const validate = () => {
     const newErrors = {};
 
@@ -71,6 +75,8 @@ export default function AddBook() {
     return newErrors;
   };
 
+
+  //submit logic for form 
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -93,6 +99,8 @@ export default function AddBook() {
       description: form.description.trim(),
     };
 
+
+    // dispatching action for redux store
     dispatch(addBook(newBook));
 
     navigate("/browse-books");
