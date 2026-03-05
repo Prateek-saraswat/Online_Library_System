@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 
-// Static categories matching BooksData.js
 const staticCategories = [
   "All",
   "Philosophical",
@@ -10,16 +9,12 @@ const staticCategories = [
   "Poetry",
 ];
 
-// CategoryFilter Component
-// Dynamically adds categories from Redux added books
+
 const CategoryFilter = ({ selectedCategory, setSelectedCategory }) => {
-  // Get added books from Redux
   const addedBooks = useSelector((state) => state.books.addedBooks);
 
-  // Extract unique categories from added books and capitalize
   const addedCategories = addedBooks.map((b) => capitalize(b.category));
 
-  // Merge static + added categories, remove duplicates using Set
   const allCategories = [...new Set([...staticCategories, ...addedCategories])];
 
   return (
@@ -42,7 +37,6 @@ const CategoryFilter = ({ selectedCategory, setSelectedCategory }) => {
   );
 };
 
-// Helper to capitalize first letter
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }

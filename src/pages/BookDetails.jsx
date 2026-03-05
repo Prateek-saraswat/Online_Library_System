@@ -3,14 +3,12 @@ import  books  from "../data/BooksData.js";
 
 
 export default function BookDetails() {
-  const { id } = useParams(); // get book id from URL
+  const { id } = useParams(); 
   const navigate = useNavigate();
 
-  // Find the book from the books array using the id from URL
   const book = books.find((b) => b.id === parseInt(id));
 
 
-  // ── Render star rating ──
   const renderStars = (rating) => {
     const full = Math.floor(rating);
     const half = rating % 1 >= 0.5;
@@ -27,7 +25,7 @@ export default function BookDetails() {
   return (
     <div className="min-h-screen bg-amber-950 px-6 py-10">
       <div className="max-w-5xl mx-auto">
-
+    
         <button
           onClick={() => navigate("/browse-books")}
           className="flex items-center gap-2 text-amber-400 hover:text-amber-300 text-sm font-medium mb-8 transition-colors duration-200 group"

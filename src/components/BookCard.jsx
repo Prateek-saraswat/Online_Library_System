@@ -1,11 +1,11 @@
-
+import {Link} from "react-router-dom"
 
 const BookCard = ({book}) => {
     console.log(book)
   return (
     <div className="bg-amber-900 rounded-2xl overflow-hidden shadow-2xl w-64 group hover:scale-105 transition-transform duration-300 cursor-pointer border border-amber-800">
 
-        <div className="relative h-80 overflow-hidden">
+        <div className="relative h-50 overflow-hidden">
           <img
             src={book.coverImage}
             alt={book.title}
@@ -41,10 +41,11 @@ const BookCard = ({book}) => {
             <span className="text-amber-500 text-xs flex items-center gap-1">
               📖 {book.pages} pages
             </span>
-
+            <Link to={`/books/${book.category}/${book.id}`}>
             <button className="bg-amber-500 hover:bg-amber-400 text-amber-950 text-xs font-bold px-4 py-1.5 rounded-full transition-all duration-200 hover:shadow-md hover:shadow-amber-400/30">
               View Details
             </button>
+            </Link>
           </div>
         </div>
     </div>

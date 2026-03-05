@@ -26,7 +26,7 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className="relative text-amber-100 hover:text-amber-400 font-medium px-4 py-2 rounded-md text-sm tracking-wide transition-all duration-200 hover:bg-amber-900 group"
               >
                 {link.label}
@@ -58,14 +58,14 @@ const Navbar = () => {
       {menuOpen && (
         <div className="md:hidden bg-amber-900 border-t border-amber-800 px-4 pb-4 pt-2 space-y-1">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
+              to={link.href}
               onClick={() => setMenuOpen(false)}
               className="block text-amber-100 hover:text-amber-400 hover:bg-amber-800 px-4 py-2.5 rounded-md text-sm font-medium tracking-wide transition-all duration-200"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
 
          
