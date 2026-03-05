@@ -1,16 +1,138 @@
-# React + Vite
+# Github-Repository - https://github.com/Prateek-saraswat/Online_Library_System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Online Library System
 
-Currently, two official plugins are available:
+A React-based online library management system built with Vite, Redux, and Tailwind CSS. This application allows users to browse books by category, view book details, search for books, and add new books to the library.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **Home Page**: Welcome message, navigation bar, and popular books display
+- **Browse Books**: Filter by category, search by title/author, dynamic routing
+- **Book Details**: View detailed information about any book
+- **Add Book**: Form to add new books with validation (Redux state management)
+- **404 Page**: Custom error page for invalid routes
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **React** (v19.2.0)
+- **Vite** (v7.3.1)
+- **Redux Toolkit** (@reduxjs/toolkit v2.11.2)
+- **React Router DOM** (v7.13.1)
+- **Tailwind CSS** (v4.2.1)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd ONLINE_LIBRARY_SYSTEM
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Application
+
+1. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+2. Open your browser and navigate to:
+   ```
+   http://localhost:5173
+   ```
+
+### Building for Production
+
+To create a production build:
+```bash
+npm run build
+```
+
+The built files will be in the `dist` folder.
+
+### Preview Production Build
+
+To preview the production build locally:
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── AddedBooks.jsx      # Displays newly added books
+│   ├── BookCard.jsx        # Book card component
+│   ├── BookList.jsx        # Book list grid component
+│   ├── CategoryFilter.jsx  # Category filter buttons
+│   ├── ErrorPage.jsx      # 404 error page
+│   ├── Header.jsx         # Navigation header
+│   └── SearchBar.jsx      # Search input component
+├── data/
+│   └── BooksData.js       # Static book data
+├── pages/
+│   ├── AddBook.jsx        # Add new book form
+│   ├── BookDetails.jsx   # Book details page
+│   ├── BrowseBook.jsx    # Browse books page
+│   └── Home.jsx          # Home page
+├── redux/
+│   ├── booksSlice.js     # Redux slice for books
+│   └── store.js          # Redux store configuration
+├── App.jsx               # Main App component
+├── main.jsx              # Entry point with router setup
+├── index.css             # Global styles
+└── App.css               # App-specific styles
+```
+
+## Routes
+
+| Route | Description |
+|-------|-------------|
+| `/` | Home page |
+| `/browse-books` | Browse all books |
+| `/books/:category` | Browse books by category |
+| `/books/:category/:id` | Book details page |
+| `/add-book` | Add new book form |
+| `*` | 404 Error page |
+
+## Available Categories
+
+- Philosophical
+- Fantasy
+- Sci-Fi
+- History
+- Poetry
+
+## Adding a New Book
+
+1. Click on "Add Book" in the navigation
+2. Fill in all required fields:
+   - Book Title
+   - Author
+   - Category (select from dropdown)
+   - Rating (1-5)
+   - Pages
+   - Launch Date
+   - Cover Image URL
+   - Description
+3. Click "Add Book" to submit
+
+The new book will be added to the Redux store and displayed in the Browse Books page.
+
+
