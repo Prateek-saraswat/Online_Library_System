@@ -1,24 +1,30 @@
+import { useSelector } from "react-redux";
 
-
-const categories = [
+// Static categories matching BooksData.js
+const staticCategories = [
   "All",
-  "Fiction",
-  "Sci-Fi",
-  "Fantasy",
-  "Mystery",
-  "Non-Fiction",
   "Philosophical",
-  "Adventure",
-  "Historical",
+  "Fantasy",
   "Sci-Fi",
   "History",
   "Poetry",
 ];
 
+// CategoryFilter Component
+// Dynamically adds categories from Redux added books
 const CategoryFilter = ({ selectedCategory, setSelectedCategory }) => {
+  // Get added books from Redux
+  const addedBooks = useSelector((state) => state.books.addedBooks);
+
+  // Extract unique categories from added books and capitalize
+  const addedCategories = addedBooks.map((b) => capitalize(b.category));
+
+  // Merge static + added categories, remove duplicates using Set
+  const allCategories = [...new Set([...staticCategories, ...addedCategories])];
+
   return (
     <div className="flex flex-wrap gap-2">
-      {categories.map((cat) => (
+      {allCategories.map((cat) => (
         <button
           key={cat}
           onClick={() => setSelectedCategory(cat)}
@@ -35,5 +41,10 @@ const CategoryFilter = ({ selectedCategory, setSelectedCategory }) => {
     </div>
   );
 };
+
+// Helper to capitalize first letter
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 export default CategoryFilter;

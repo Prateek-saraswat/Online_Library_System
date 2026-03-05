@@ -7,6 +7,9 @@ import ErrorPage from './components/ErrorPage.jsx'
 import Home from './pages/Home.jsx'
 import BrowseBooks from './pages/BrowseBook.jsx'
 import BookDetails from './pages/BookDetails.jsx'
+import AddBook from './pages/AddBook.jsx'
+import {Provider} from "react-redux"
+import store from './redux/store.js'
 
 
 const appRouter = createBrowserRouter([
@@ -30,10 +33,10 @@ const appRouter = createBrowserRouter([
         path: '/books/:category/:id',      
         element: <BookDetails />
       },
-      // {
-      //   path: '/add-book',                
-      //   element: <AddBook />
-      // }
+      {
+        path: '/add-book',                
+        element: <AddBook />
+      }
     ]
   },
   {
@@ -44,6 +47,8 @@ const appRouter = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Provider store={store}>
     <RouterProvider  router={appRouter}/> 
+    </Provider>
   </StrictMode>,
 )
