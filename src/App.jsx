@@ -1,11 +1,12 @@
-import { useEffect } from "react";
-
+import Header from "./components/Header.jsx"
+import { Outlet } from "react-router-dom"
 export default function App() {
-  useEffect(() => {
-    fetch("https://www.dbooks.org/api/recent")
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  } , []);
+  
 
-  return <div>App component</div>;
+  return (
+    <>
+    <Header />
+    <Outlet />
+    </>
+  )
 }
